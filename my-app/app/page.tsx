@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
   ArrowRight,
   Plus,
   Trash,
   MagnifyingGlass,
   Check,
+  EnvelopeSimple,
+  Lock,
 } from "@phosphor-icons/react/dist/ssr"
 
 const variants = [
@@ -143,6 +146,71 @@ export default function Home() {
               {v}
             </Button>
           ))}
+        </div>
+      </section>
+
+      {/* ── INPUT ── */}
+      <h1 className="mb-2 mt-16 text-2xl font-semibold text-foreground">
+        Input Showcase
+      </h1>
+      <p className="mb-10 text-sm text-muted-foreground">
+        shadcn/ui inputs — states and common patterns
+      </p>
+
+      {/* Basic states */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          States
+        </h2>
+        <div className="flex max-w-sm flex-col gap-3">
+          <Input placeholder="Default" />
+          <Input placeholder="Disabled" disabled />
+          <Input placeholder="Read only" readOnly value="Read-only value" />
+          <Input aria-invalid placeholder="Error state" />
+          <Input type="password" placeholder="Password" />
+          <Input type="file" />
+        </div>
+      </section>
+
+      {/* With labels */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          With Labels
+        </h2>
+        <div className="flex max-w-sm flex-col gap-4">
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium text-foreground">Email</label>
+            <Input type="email" placeholder="you@example.com" />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium text-foreground">Password</label>
+            <Input type="password" placeholder="••••••••" />
+            <p className="text-xs text-muted-foreground">Must be at least 8 characters.</p>
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium text-destructive">Email</label>
+            <Input aria-invalid type="email" placeholder="you@example.com" />
+            <p className="text-xs text-destructive">Please enter a valid email address.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Input + Button combos */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          With Button
+        </h2>
+        <div className="flex max-w-sm flex-col gap-3">
+          <div className="flex gap-2">
+            <Input placeholder="Search logs…" />
+            <Button variant="outline" size="icon" aria-label="Search">
+              <MagnifyingGlass />
+            </Button>
+          </div>
+          <div className="flex gap-2">
+            <Input type="email" placeholder="Subscribe to updates" />
+            <Button>Subscribe</Button>
+          </div>
         </div>
       </section>
     </div>
