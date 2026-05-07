@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
+import {
   ArrowRight,
   Plus,
   Trash,
@@ -212,6 +220,109 @@ export default function Home() {
             <Button>Subscribe</Button>
           </div>
         </div>
+      </section>
+
+      {/* ── CARD ── */}
+      <h1 className="mb-2 mt-16 text-2xl font-semibold text-foreground">
+        Card Showcase
+      </h1>
+      <p className="mb-10 text-sm text-muted-foreground">
+        shadcn/ui cards — structure and common patterns
+      </p>
+
+      {/* Basic card */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Basic
+        </h2>
+        <div className="flex flex-wrap gap-6">
+          <Card className="w-72">
+            <CardHeader>
+              <CardTitle>Card Title</CardTitle>
+              <CardDescription>A short description of the card content goes here.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-foreground">This is the main content area of the card.</p>
+            </CardContent>
+            <CardFooter className="gap-2">
+              <Button size="sm">Confirm</Button>
+              <Button size="sm" variant="outline">Cancel</Button>
+            </CardFooter>
+          </Card>
+
+          {/* Header only */}
+          <Card className="w-72">
+            <CardHeader>
+              <CardTitle>Header Only</CardTitle>
+              <CardDescription>No content or footer — just a header.</CardDescription>
+            </CardHeader>
+          </Card>
+
+          {/* No footer */}
+          <Card className="w-72">
+            <CardHeader>
+              <CardTitle>Without Footer</CardTitle>
+              <CardDescription>Card with header and content but no footer.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Content lives here.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* With form */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          With Form
+        </h2>
+        <Card className="w-80">
+          <CardHeader>
+            <CardTitle>Sign in</CardTitle>
+            <CardDescription>Enter your credentials to continue.</CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1.5">
+              <label className="text-sm font-medium text-foreground">Email</label>
+              <Input type="email" placeholder="you@example.com" />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <label className="text-sm font-medium text-foreground">Password</label>
+              <Input type="password" placeholder="••••••••" />
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-full">
+              Sign in
+              <ArrowRight />
+            </Button>
+          </CardFooter>
+        </Card>
+      </section>
+
+      {/* Destructive / alert card */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Destructive
+        </h2>
+        <Card className="w-80 border-destructive/30">
+          <CardHeader>
+            <CardTitle className="text-destructive">Delete account</CardTitle>
+            <CardDescription>This action cannot be undone.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              All your data will be permanently removed from our servers.
+            </p>
+          </CardContent>
+          <CardFooter className="gap-2">
+            <Button variant="destructive">
+              <Trash />
+              Delete
+            </Button>
+            <Button variant="outline">Cancel</Button>
+          </CardFooter>
+        </Card>
       </section>
     </div>
   )
