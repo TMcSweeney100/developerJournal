@@ -1,65 +1,150 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import {
+  ArrowRight,
+  Plus,
+  Trash,
+  MagnifyingGlass,
+  Check,
+} from "@phosphor-icons/react/dist/ssr"
+
+const variants = [
+  "default",
+  "secondary",
+  "destructive",
+  "outline",
+  "ghost",
+  "link",
+] as const
+
+const sizes = ["xs", "sm", "default", "lg"] as const
+const iconSizes = ["icon-xs", "icon-sm", "icon", "icon-lg"] as const
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-background p-10 font-sans">
+      <h1 className="mb-2 text-2xl font-semibold text-foreground">
+        Button Showcase
+      </h1>
+      <p className="mb-10 text-sm text-muted-foreground">
+        shadcn/ui buttons — all variants, sizes, and states
+      </p>
+
+      {/* Variants × Sizes */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Variants &amp; Sizes
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr>
+                <th className="w-28 pb-3 text-left text-xs font-medium text-muted-foreground">
+                  Variant
+                </th>
+                {sizes.map((s) => (
+                  <th
+                    key={s}
+                    className="pb-3 text-left text-xs font-medium text-muted-foreground"
+                  >
+                    {s}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {variants.map((v) => (
+                <tr key={v} className="border-t border-border">
+                  <td className="py-3 pr-4 text-xs text-muted-foreground">
+                    {v}
+                  </td>
+                  {sizes.map((s) => (
+                    <td key={s} className="py-3 pr-6">
+                      <Button variant={v} size={s}>
+                        Label
+                      </Button>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* With Icons */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          With Icons
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          <Button>
+            <Plus />
+            New Entry
+          </Button>
+          <Button variant="secondary">
+            Save
+            <Check />
+          </Button>
+          <Button variant="outline">
+            Search
+            <MagnifyingGlass />
+          </Button>
+          <Button variant="destructive">
+            <Trash />
+            Delete
+          </Button>
+          <Button variant="ghost">
+            Continue
+            <ArrowRight />
+          </Button>
+          <Button variant="link">
+            View all
+            <ArrowRight />
+          </Button>
         </div>
-      </main>
+      </section>
+
+      {/* Icon-only buttons */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Icon Only
+        </h2>
+        <div className="flex flex-wrap items-end gap-4">
+          {iconSizes.map((s) => (
+            <div key={s} className="flex flex-col items-center gap-2">
+              <Button size={s} variant="default" aria-label="Add">
+                <Plus />
+              </Button>
+              <span className="text-xs text-muted-foreground">{s}</span>
+            </div>
+          ))}
+          <div className="ml-4 flex gap-2">
+            <Button size="icon" variant="outline" aria-label="Search">
+              <MagnifyingGlass />
+            </Button>
+            <Button size="icon" variant="ghost" aria-label="Delete">
+              <Trash />
+            </Button>
+            <Button size="icon" variant="destructive" aria-label="Delete">
+              <Trash />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* States */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Disabled State
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {variants.map((v) => (
+            <Button key={v} variant={v} disabled>
+              {v}
+            </Button>
+          ))}
+        </div>
+      </section>
     </div>
-  );
+  )
 }
