@@ -1,0 +1,5 @@
+# Claude Code worktrees (auto-created during plan mode — never commit these)
+.claude/
+
+# Misc
+*.zip
