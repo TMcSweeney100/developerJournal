@@ -3,8 +3,8 @@
 ## Phase 0 — Project Foundation
 
 - [x] Create frontend app
-- [x ] Install shadcn/ui
-- [ ] Create backend app
+- [x] Install shadcn/ui
+- [x] Create backend app
 - [ ] Connect PostgreSQL
 - [ ] Add backend health endpoint
 - [ ] Confirm frontend can run

@@ -9,6 +9,14 @@ import {
   CardFooter,
 } from "@/components/ui/card"
 import {
+  PageHeading,
+  PageHeadingContent,
+  PageHeadingEyebrow,
+  PageHeadingTitle,
+  PageHeadingDescription,
+  PageHeadingActions,
+} from "@/components/ui/page-heading"
+import {
   ArrowRight,
   Plus,
   Trash,
@@ -32,7 +40,42 @@ const iconSizes = ["icon-xs", "icon-sm", "icon", "icon-lg"] as const
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background p-10 font-sans">
+    <div className="min-h-screen bg-background font-sans">
+
+      {/* ── PAGE HEADING ── */}
+      <section className="mb-12">
+        <h2 className="px-10 pb-4 pt-10 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Page Heading
+        </h2>
+
+        <div className="mb-6">
+          <p className="px-10 pb-3 text-xs text-muted-foreground">With title, description, and actions</p>
+          <PageHeading>
+            <PageHeadingContent>
+              <PageHeadingEyebrow>Dashboard</PageHeadingEyebrow>
+              <PageHeadingTitle>Daily Logs</PageHeadingTitle>
+              <PageHeadingDescription>
+                Track what you worked on, learned, and found difficult each day.
+              </PageHeadingDescription>
+            </PageHeadingContent>
+            <PageHeadingActions>
+              <Button variant="outline">Export</Button>
+              <Button>New Log</Button>
+            </PageHeadingActions>
+          </PageHeading>
+        </div>
+
+        <div className="mb-6">
+          <p className="px-10 pb-3 text-xs text-muted-foreground">Title only</p>
+          <PageHeading>
+            <PageHeadingContent>
+              <PageHeadingTitle>Goals</PageHeadingTitle>
+            </PageHeadingContent>
+          </PageHeading>
+        </div>
+      </section>
+
+      <div className="p-10">
       <h1 className="mb-2 text-2xl font-semibold text-foreground">
         Button Showcase
       </h1>
@@ -324,6 +367,7 @@ export default function Home() {
           </CardFooter>
         </Card>
       </section>
+    </div>
     </div>
   )
 }
