@@ -5,15 +5,15 @@
 - [x] Create frontend app
 - [x] Install shadcn/ui
 - [x] Create backend app
-- [ ] Connect PostgreSQL
+- [x ] Connect PostgreSQL
 - [ ] Add backend health endpoint
-- [ ] Confirm frontend can run
-- [ ] Confirm backend can run
-- [ ] Confirm database connection works
+- [x ] Confirm frontend can run
+- [x ] Confirm backend can run
+- [x ] Confirm database connection works
 
 ## Phase 1 — Daily Log Backend
 
-- [ ] Create DailyLog entity
+- [x ] Create DailyLog entity
 - [ ] Create DailyLog repository
 - [ ] Create DailyLog service
 - [ ] Create DailyLog controller
