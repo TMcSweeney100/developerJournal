@@ -2,27 +2,22 @@
 
 import * as React from "react"
 import {
-  IconCamera,
-  IconChartBar,
+  IconCalendar,
   IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileWord,
-  IconFolder,
+  IconFileText,
   IconHelp,
-  IconInnerShadowTop,
-  IconListDetails,
-  IconReport,
+  IconNotebook,
+  IconPresentation,
   IconSearch,
   IconSettings,
-  IconUsers,
+  IconTarget,
+  IconTerminal2,
 } from "@tabler/icons-react"
 
-import { NavLogs } from '@/components/NavLogs'
-import { NavMain } from '@/components/NavMain'
-import { NavSecondary } from '@/components/NavSecondary'
-import { NavUser } from '@/components/NavUser'
+import { NavLogs } from "@/components/NavLogs"
+import { NavMain } from "@/components/NavMain"
+import { NavSecondary } from "@/components/NavSecondary"
+import { NavUser } from "@/components/NavUser"
 
 import {
   Sidebar,
@@ -32,122 +27,32 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@/components/ui/sidebar'
+} from "@/components/ui/sidebar"
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Tim McSweeney",
+    email: "timmcsweeney50@gmail.com",
+    avatar: "",
   },
   navMain: [
-    {
-      title: "Dashboard",
-      url: "#",
-      icon: IconDashboard,
-    },
-    {
-      title: "Lifecycle",
-      url: "#",
-      icon: IconListDetails,
-    },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
-    },
+    { title: "Dashboard", url: "#", icon: IconDashboard },
+    { title: "Daily Log", url: "#", icon: IconNotebook },
+    { title: "Goals", url: "#", icon: IconTarget },
+    { title: "Search", url: "#", icon: IconSearch },
+    { title: "Standup", url: "#", icon: IconPresentation },
+    { title: "Summaries", url: "#", icon: IconFileText },
   ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: IconCamera,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: IconFileDescription,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: IconFileAi,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
+  navLogs: [
+    { name: "May 15, 2026", url: "#", icon: IconCalendar },
+    { name: "May 14, 2026", url: "#", icon: IconCalendar },
+    { name: "May 13, 2026", url: "#", icon: IconCalendar },
+    { name: "May 12, 2026", url: "#", icon: IconCalendar },
+    { name: "May 9, 2026", url: "#", icon: IconCalendar },
   ],
   navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: IconSettings,
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: IconHelp,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: IconSearch,
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: IconReport,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
-    },
+    { title: "Settings", url: "#", icon: IconSettings },
+    { title: "Help", url: "#", icon: IconHelp },
   ],
 }
 
@@ -162,8 +67,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:p-1.5!"
             >
               <a href="#">
-                <IconInnerShadowTop className="size-5!" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <IconTerminal2 className="size-5!" />
+                <span className="text-base font-semibold">Dev Log</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -171,7 +76,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavLogs items={data.documents} />
+        <NavLogs items={data.navLogs} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
