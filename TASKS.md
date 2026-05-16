@@ -14,11 +14,11 @@
 ## Phase 1 — Daily Log Backend
 
 - [x ] Create DailyLog entity
-- [ ] Create DailyLog repository
-- [ ] Create DailyLog service
-- [ ] Create DailyLog controller
-- [ ] Add create endpoint
-- [ ] Add get all endpoint
-- [ ] Add get one endpoint
-- [ ] Add update endpoint
-- [ ] Add delete endpoint
+- [x] Create DailyLog repository
+- [x ] Create DailyLog service
+- [x ] Create DailyLog controller
+- [ x] Add create endpoint
+- [ x] Add get all endpoint
+- [x ] Add get one endpoint
+- [ x] Add update endpoint
+- [x ] Add delete endpoint

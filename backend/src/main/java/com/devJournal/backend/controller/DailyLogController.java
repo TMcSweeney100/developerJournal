@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/logs")
 public class DailyLogController {
     private final DailyLogService dailyLogService;
 
@@ -36,7 +36,7 @@ public class DailyLogController {
         dailyLogService.deleteById(id);
     }
 
-    
+
 
 
 
