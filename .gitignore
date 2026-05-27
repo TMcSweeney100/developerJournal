@@ -1,5 +1,8 @@
 # Claude Code worktrees (auto-created during plan mode — never commit these)
 .claude/
 
+# Superpowers brainstorm session files (temporary visual companion artifacts)
+.superpowers/
+
 # Misc
 *.zip
