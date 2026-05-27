@@ -656,3 +656,16 @@ npx tsc --noEmit
 ```
 
 Expected: no errors.
+
+
+
+STEPS PLAN
+1. Install react-hook-form, zod, @hookform/resolvers
+  2. Add shadcn form, textarea, slider components
+  3. Create DailyLogSheet skeleton
+  4. Wire the "New Daily Log" button (opens the sheet)
+  5. Add zod schema + form structure with three section placeholders
+  6. Build Today fields (title, workedOn, tasksCompleted)
+  7. Build Reflections fields (blockers, difficulties, thingsLearned, toolsUsed)
+  8. Build Tomorrow fields (notesForTomorrow + confidence slider)
+  9. Final verification checklist
